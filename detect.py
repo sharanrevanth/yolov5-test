@@ -133,7 +133,7 @@ def detect(save_img=False):
                         label = '%d' % (pid)
                         if label not in trajectory:
                             trajectory[label] = []
-                        plot_one_box(xyxy, im0, label=label, color=colors[int(label)%32], line_thickness=2)
+                        plot_one_box(xyxy, im0, label=label, color=colors[int(label)%32], line_thickness=1)
                         height, width, _ = im0.shape
                         x1, y1, x2, y2 = max(0,int(xyxy[0])), max(0,int(xyxy[1])), min(width,int(xyxy[2])), min(height,int(xyxy[3]))
                         center = (int((x1 + x2)/2), int((y1 + y2)/2))
@@ -141,7 +141,7 @@ def detect(save_img=False):
                         for i in range(1,len(trajectory[label])):
                             if trajectory[label][i-1] is None or trajectory[label][i]is None:
                                 continue
-                            cv2.line(im0, trajectory[label][i - 1], trajectory[label][i], colors[int(label)%32], 1)
+                            cv2.line(im0, trajectory[label][i - 1], trajectory[label][i], colors[int(label)%32], 2)
                         bbox_img = im0[y1:y2,x1:x2]
                             # print(type(bbox_img))
                         shortname, extension = os.path.splitext(Path(p).name)
