@@ -14,3 +14,4 @@ python detect.py --weights "/content/drive/My Drive/yolo weight/yolov5x.pt"
                  --conf 0.4 
                  --source ./inference/images/ 
                  --deepsort ./config/deep_sort.yaml
+```

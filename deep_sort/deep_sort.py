@@ -57,7 +57,6 @@ class DeepSort(object):
     """
     TODO:
         Convert bbox from xc_yc_w_h to xtl_ytl_w_h
-    Thanks JieChen91@github.com for reporting this bug!
     """
     @staticmethod
     def _xywh_to_tlwh(bbox_xywh):
@@ -82,7 +81,6 @@ class DeepSort(object):
         """
         TODO:
             Convert bbox from xtl_ytl_w_h to xc_yc_w_h
-        Thanks JieChen91@github.com for reporting this bug!
         """
         x,y,w,h = bbox_tlwh
         x1 = max(int(x),0)
