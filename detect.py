@@ -142,6 +142,7 @@ def detect(save_img=False):
                             if trajectory[label][i-1] is None or trajectory[label][i]is None:
                                 continue
                             cv2.line(im0, trajectory[label][i - 1], trajectory[label][i], colors[int(label)%32], 2)
+                            print(label, trajectory[label])
                         bbox_img = im0[y1:y2,x1:x2]
                             # print(type(bbox_img))
                         shortname, extension = os.path.splitext(Path(p).name)
